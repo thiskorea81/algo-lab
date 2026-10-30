@@ -1,6 +1,8 @@
 <script setup>
 import { computed, ref } from 'vue'
 import LessonHead from '../../components/LessonHead.vue'
+import BoardShort from '../../components/BoardShort.vue'
+import { SIEVE } from '../../shorts/sieve.js'
 import SieveBoard from '../../components/SieveBoard.vue'
 import Quiz from '../../components/Quiz.vue'
 import { markDone } from '../../progress.js'
@@ -98,10 +100,12 @@ const QUIZ = [
     '다음 단계'를 누를 때마다 남은 수 중 가장 작은 수 p에 ○ 하고, p의 배수를 지워요.
     색깔은 <b>어느 소수의 배수로 지워졌는지</b>를 나타내요. 지워진 수를 누르면 이유를 알려 줘요.
   </p>
+  <BoardShort :short="SIEVE.middle[1]" />
   <SieveBoard :max="100" mode="step" from-square click-info @pick="explain" />
   <p v-if="info" class="key">{{ info }}</p>
 
   <h2>2. 언제 멈춰도 될까?</h2>
+  <BoardShort :short="SIEVE.middle[0]" />
   <p>
     100까지는 2, 3, 5, 7의 배수만 지우면 끝나요. 11의 배수는 왜 안 지워도 될까요?
     11의 배수 가운데 100 이하인 수는 11 × 2, …, 11 × 9인데, 이 수들은 모두 <b>11보다 작은 소인수</b>(2, 3, 5, 7)를 가지고 있어서 이미 지워졌어요.

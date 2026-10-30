@@ -1,5 +1,7 @@
 <script setup>
 import LessonHead from '../../components/LessonHead.vue'
+import BoardShort from '../../components/BoardShort.vue'
+import { HANOI } from '../../shorts/hanoi.js'
 import HanoiPuzzle from '../../components/HanoiPuzzle.vue'
 import HanoiMini from '../../components/HanoiMini.vue'
 import Quiz from '../../components/Quiz.vue'
@@ -57,6 +59,7 @@ const QUIZ = [
     기둥이 세 개 있어요. 왼쪽 <b>가</b> 기둥에 크기가 다른 원판이 큰 것부터 쌓여 있어요.
     이 원판을 모두 오른쪽 <b>다</b> 기둥으로 옮기면 성공이에요. 가운데 <b>나</b> 기둥은 잠깐 쉬어 가는 곳이에요.
   </p>
+  <BoardShort :short="HANOI.elementary[0]" />
   <div class="rules">
     <div class="card"><b>규칙 1</b><br />한 번에 원판을 1개만 옮겨요.</div>
     <div class="card"><b>규칙 2</b><br />맨 위에 있는 원판만 옮길 수 있어요.</div>
@@ -68,6 +71,7 @@ const QUIZ = [
   <HanoiPuzzle :discs="2" :choices="[2, 3, 4]" />
 
   <h2>🔍 큰 탑을 옮기는 비밀</h2>
+  <BoardShort :short="HANOI.elementary[1]" />
   <p>원판 3개를 옮길 때, 위의 원판 2개를 <b>작은 탑 하나</b>라고 생각해 보세요. 그러면 할 일은 딱 세 가지예요.</p>
   <div class="steps">
     <HanoiMini :pegs="[[3], [2, 1], []]" :arrow="[0, 1]" caption="① 작은 탑을 나로 비켜 두기" />

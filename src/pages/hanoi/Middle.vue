@@ -1,6 +1,8 @@
 <script setup>
 import { computed, ref } from 'vue'
 import LessonHead from '../../components/LessonHead.vue'
+import BoardShort from '../../components/BoardShort.vue'
+import { HANOI } from '../../shorts/hanoi.js'
 import HanoiPuzzle from '../../components/HanoiPuzzle.vue'
 import Quiz from '../../components/Quiz.vue'
 import { markDone } from '../../progress.js'
@@ -75,6 +77,7 @@ const QUIZ = [
     원판 수를 고르고 <b>한 단계씩 ▶</b>을 눌러 보세요. 아래 '맡긴 일' 목록은 지금 이동이 어떤 큰 일 안에서 일어나는지 보여 줘요.
     큰 일은 작은 일을 맡기고 기다렸다가, 작은 일이 끝나면 자기 일을 이어서 해요. 컴퓨터는 이 목록을 <b>스택</b>이라는 곳에 쌓아 기억해요.
   </p>
+  <BoardShort :short="HANOI.middle[1]" />
   <HanoiPuzzle :discs="3" :choices="[3, 4, 5]" auto show-stack />
 
   <h2>2. 컴퓨터에게 시킬 순서(의사코드)</h2>
@@ -90,6 +93,7 @@ const QUIZ = [
   </p>
 
   <h2>3. 옮기는 횟수의 규칙 찾기</h2>
+  <BoardShort :short="HANOI.middle[0]" />
   <p>원판 n개를 옮기는 가장 적은 횟수를 T(n)이라고 해요. 위 퍼즐로 확인하며 표를 채워 보세요.</p>
   <div class="table-scroll">
     <table>

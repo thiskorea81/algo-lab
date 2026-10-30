@@ -1,5 +1,7 @@
 <script setup>
 import LessonHead from '../../components/LessonHead.vue'
+import BoardShort from '../../components/BoardShort.vue'
+import { HANOI } from '../../shorts/hanoi.js'
 import HanoiPuzzle from '../../components/HanoiPuzzle.vue'
 import PyLab from '../../components/PyLab.vue'
 import Quiz from '../../components/Quiz.vue'
@@ -118,6 +120,7 @@ const QUIZ = [
   <HanoiPuzzle :discs="3" :choices="[3, 4, 5, 6]" :names="['A', 'B', 'C']" auto show-stack />
 
   <h2>1. 재귀 함수 완성하기</h2>
+  <BoardShort :short="HANOI.high[0]" />
   <PyLab
     id="hanoi-high-1"
     task="③의 빈칸 세 개를 채워 완성하세요. 입력 n을 받아 A 기둥의 원판 n개를 C로 옮기는 순서를 출력해요."
@@ -145,6 +148,7 @@ const QUIZ = [
   />
 
   <h2>4. 왜 2ⁿ − 1번이 가장 적을까?</h2>
+  <BoardShort :short="HANOI.high[1]" />
   <ul>
     <li><b>이 방법의 횟수</b>: T(1) = 1, T(n) = 2T(n−1) + 1. 수학적 귀납법으로 T(n) = 2ⁿ − 1.</li>
     <li>

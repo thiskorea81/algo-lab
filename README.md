@@ -15,6 +15,7 @@ npm run build    # 결과: dist/ (Netlify가 같은 명령으로 배포, netlify
 
 - `src/topics.js` 주제·수준 목록(첫 화면 카드와 페이지 위쪽 길잡이가 함께 씀). 새 주제는 여기와 `src/router.js`에 추가.
 - `src/pages/<주제>/{Elementary,Middle,High}.vue` 수준별 학습 페이지.
+- `src/shorts/` 판서 쇼츠 대본(`hanoi.js`, `sieve.js`, 수준별 2편)과 칠판 도형 도우미(`draw.js`). `BoardShort.vue`가 소리 없이 한 줄씩 판서한다(자막·진행 막대·화면 왼쪽/오른쪽 눌러 이전/다음).
 - `src/components/` 체험 부품: `HanoiPuzzle`(직접 옮기기·자동 풀이·호출 스택), `HanoiMini`(정지 그림), `SieveBoard`(직접 지우기·단계별 체), `DotRect`(바둑돌 직사각형), `Quiz`(첫 오답에 힌트), `PyLab`(파이썬 실습·채점).
 - `public/py-worker.js` + `src/pyrun.js` 파이썬 실행 워커(시간 초과 시 워커를 끄고 새로 만듦).
 - 진행 상황(푼 페이지, 작성한 코드)은 브라우저 localStorage에만 저장.

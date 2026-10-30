@@ -1,5 +1,7 @@
 <script setup>
 import LessonHead from '../../components/LessonHead.vue'
+import BoardShort from '../../components/BoardShort.vue'
+import { SIEVE } from '../../shorts/sieve.js'
 import DotRect from '../../components/DotRect.vue'
 import SieveBoard from '../../components/SieveBoard.vue'
 import Quiz from '../../components/Quiz.vue'
@@ -56,6 +58,7 @@ const QUIZ = [
     바둑돌 12개는 3줄 4개씩, 2줄 6개씩처럼 여러 가지 직사각형으로 놓을 수 있어요. 그런데 7개는 어떨까요?
     한 줄로 늘어놓는 방법(1 × 7)밖에 없어요. 수를 바꿔 보세요.
   </p>
+  <BoardShort :short="SIEVE.elementary[0]" />
   <DotRect />
   <div class="key">
     1보다 큰 수 가운데 <b>1과 자기 자신으로만 나누어떨어지는 수</b>를 <b>소수</b>라고 해요.
@@ -74,6 +77,7 @@ const QUIZ = [
     <li>2번으로 돌아가 되풀이해요.</li>
   </ol>
   <p>직접 해 보세요. 배수를 하나씩 눌러 지우다가, 익숙해지면 '한꺼번에 지우기'를 눌러도 돼요.</p>
+  <BoardShort :short="SIEVE.elementary[1]" />
   <SieveBoard :max="50" mode="hand" />
   <p class="tip">
     💡 7의 배수를 지우고 나면 컴퓨터가 "남은 수는 모두 소수예요"라고 알려 줘요. 왜 11의 배수는 지우지 않아도 될까요?

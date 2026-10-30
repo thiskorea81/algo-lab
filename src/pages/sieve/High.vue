@@ -1,6 +1,8 @@
 <script setup>
 import { ref } from 'vue'
 import LessonHead from '../../components/LessonHead.vue'
+import BoardShort from '../../components/BoardShort.vue'
+import { SIEVE } from '../../shorts/sieve.js'
 import SieveBoard from '../../components/SieveBoard.vue'
 import PyLab from '../../components/PyLab.vue'
 import Quiz from '../../components/Quiz.vue'
@@ -166,6 +168,7 @@ const QUIZ = [
   <SieveBoard :max="120" :cols="12" mode="step" from-square />
 
   <h2>1. 파이썬으로 체 만들기</h2>
+  <BoardShort :short="SIEVE.high[0]" />
   <PyLab
     id="sieve-high-1"
     task="빈칸(pass)을 채워 sieve(n)을 완성하세요. 채점은 여러 n에서 결과를 확인하고, 10만 이하 소수 개수(9592개)까지 맞는지 봐요."
@@ -175,6 +178,7 @@ const QUIZ = [
   />
 
   <h2>2. 두 방법 빠르기 비교</h2>
+  <BoardShort :short="SIEVE.high[1]" />
   <p>
     <b>하나씩 나누어 보기</b>: 2부터 n까지 수 k마다 2, 3, 4, …, √k로 나누어 떨어지는지 확인해요.
     <b>체</b>: 소수 p마다 p × p부터 배수만 지워요. 이 브라우저에서 직접 세고 재 볼게요.
